@@ -170,6 +170,13 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Penjelasan Dataset</strong></a></li>
+
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -340,7 +347,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -356,6 +365,25 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Penjelasan Dataset</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-mengenai-fitur-fitur-yang-ada-dalam-dataset-car-evaluation"><strong>Penjelasan mengenai fitur-fitur yang ada dalam dataset car evaluation :</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-mengenai-fitu-target-yang-digunakan-untuk-klasifikasi-dalam-dataset-car-evaluation"><strong>Penjelasan mengenai fitu target yang digunakan untuk klasifikasi dalam dataset car evaluation :</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class"><strong>Class</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression"><strong>Logistic Regression</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest"><strong>Random Forest</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-curve"><strong>Learning Curve</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network"><strong>Neural Network</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decission-tree"><strong>Decission Tree</strong></a></li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -368,16 +396,69 @@ document.write(`
   <section id="penjelasan-dataset">
 <h1><strong>Penjelasan Dataset</strong><a class="headerlink" href="#penjelasan-dataset" title="Permalink to this heading">#</a></h1>
 <p>Dataset Car Evaluation adalah dataset yang berisi tentang informasi tentang berbagai aspek mobil yang digunakan untuk mengklasifikasi kategori mobil. Dalam dataset ini terdapat 6 fitur yang digunakan sebagai fitur label dan 1 fitur digunakn sebagai fitur target.</p>
-<p>Berikut adalah penjelasan mengenai fitur-fitur yang ada dalam dataset car evaluation :</p>
-<ul class="simple">
-<li><p>buying (tingkat harga beli): Kolom ini memberikan informasi tentang kategori atau tingkat harga mobil saat pembelian. Ini dapat mencakup nilai-nilai seperti “rendah,” “sedang,” “tinggi,” atau “sangat tinggi” yang menunjukkan seberapa mahal mobil saat dibeli.</p></li>
-<li><p>maint (tingkat perawatan): Ini mengindikasikan biaya perawatan mobil. Kolom ini mungkin berisi nilai-nilai seperti “rendah,” “sedang,” “tinggi,” atau “sangat tinggi” untuk menunjukkan tingkat biaya perawatan mobil.</p></li>
-<li><p>doors (jumlah pintu): Menunjukkan jumlah pintu yang dimiliki oleh mobil. Ini bisa menjadi nilai angka seperti 2, 4, atau 5, yang mewakili jumlah pintu pada mobil.</p></li>
-<li><p>persons (Kapasitas Penumpang): Ini memberikan informasi tentang berapa banyak penumpang yang dapat diakomodasi oleh mobil. Nilai-nilai mungkin termasuk “2” untuk mobil berkapasitas dua penumpang, “4” untuk empat penumpang, dan sebagainya.</p></li>
-<li><p>lug_boot (Bagasi): Ini mencerminkan ukuran bagasi atau bagian penyimpanan mobil. Nilai-nilai mungkin mencakup “kecil,” “sedang,” atau “besar” untuk menggambarkan ukuran bagasi.</p></li>
-<li><p>safety (tingkat keamanan): Ini menunjukkan sejauh mana mobil memiliki fitur keamanan atau tingkat keamanan. Ini bisa berupa “rendah,” “sedang,” atau “tinggi” untuk menggambarkan tingkat keamanan mobil.</p></li>
-<li><p>class (Kelas/ kategori): Ini adalah kolom yang mewakili kategori atau kelas evaluasi mobil atau mobil yang diprediksi masuk ke kategori yang mana. Kolom ini mungkin berisi nilai-nilai seperti “unacc” (tidak dapat diterima), “acc” (diterima), “good” (baik), atau “vgood” (sangat baik) untuk menunjukkan evaluasi keseluruhan mobil.</p></li>
-</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="penjelasan-mengenai-fitur-fitur-yang-ada-dalam-dataset-car-evaluation">
+<h1><strong>Penjelasan mengenai fitur-fitur yang ada dalam dataset car evaluation :</strong><a class="headerlink" href="#penjelasan-mengenai-fitur-fitur-yang-ada-dalam-dataset-car-evaluation" title="Permalink to this heading">#</a></h1>
+<p><strong>1. Buying</strong></p>
+<p>Kolom ini memberikan informasi tentang kategori atau tingkat harga mobil saat pembelian. Di dalamnya terdapat nilai-nilai seperti “vhigh” “hight” “low” atau “med” yang menunjukkan seberapa mahal mobil saat dibeli. Tipe data adalah kategorikal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- vhigh (sangat tinggi) = 0
+- low (rendah) = 1
+- med (sedang) = 2
+- high (tinggi) = 3
+</pre></div>
+</div>
+<p><strong>2. Maint</strong></p>
+<p>Kolom ini berisi informasi tentang biaya perawatan mobil. Kolom ini berisi nilai-nilai seperti “vhigh” “low” “med” atau “high” untuk menunjukkan tingkat biaya perawatan mobil. Tipe data adalah kategorikal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- vhigh (sangat tinggi) : 0
+- low (rendah) = 1
+- med (sedang) = 2
+- high (tinggi) = 3
+</pre></div>
+</div>
+<p><strong>3. Doors</strong></p>
+<p>Kolom ini berisi informasi berapa banyak jumlah pintu yang dimiliki oleh mobil. JUmlah pintu pada mobil berisi nilai angka seperti 2, 4, atau 5, yang mewakili jumlah pintu pada mobil. Namun, tipe data ini adalah kategorikal, karena ada data yang menunjukkan jumlah pintu tidak dengan angka. Berikut adalah bentuk data yang sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- 2 (dua) = 0
+- 3 (tiga) = 1
+- 5more (5 atau lebih) = 2
+- 4 (empat) = 3
+</pre></div>
+</div>
+<p><strong>4. Persons</strong></p>
+<p>Kolom Ini memberikan informasi tentang berapa banyak penumpang yang dapat diakomodasi/diangkut oleh mobil. Nilai-nilai dalam data ini adalah “2” untuk mobil berkapasitas dua penumpang, “4” untuk empat penumpang, dan sebagainya. Tipe data adalah kategorikal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- 2 (dua) = 0
+- 4 (empat) = 1
+- more (lebih) = 2
+</pre></div>
+</div>
+<p><strong>5. lug_boot</strong></p>
+<p>Kolom ini memberikan informasi ukuran bagasi atau bagian penyimpanan mobil. Nilai-nilai dalam data ini adalah “small” “big” atau “med” untuk menggambarkan ukuran bagasi. Tipe data adalah kategorikal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- small (kecil) = 0
+- big (besar) = 1
+- med (sedang) = 2
+</pre></div>
+</div>
+<p><strong>6. safety</strong></p>
+<p>Kolom ini berisi informasi tentang sejauh mana mobil memiliki fitur keamanan atau tingkat keamanan. Nilai dalam data ini adalah “high” “med” dan “low” untuk menggambarkan tingkat keamanan mobil. Tipe data adalah kategorikal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- high (tinggi) = 0
+- med (sedang) = 1
+- low (rendah) = 2
+</pre></div>
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="penjelasan-mengenai-fitu-target-yang-digunakan-untuk-klasifikasi-dalam-dataset-car-evaluation">
+<h1><strong>Penjelasan mengenai fitu target yang digunakan untuk klasifikasi dalam dataset car evaluation :</strong><a class="headerlink" href="#penjelasan-mengenai-fitu-target-yang-digunakan-untuk-klasifikasi-dalam-dataset-car-evaluation" title="Permalink to this heading">#</a></h1>
+<section id="class">
+<h2><strong>Class</strong><a class="headerlink" href="#class" title="Permalink to this heading">#</a></h2>
+<p>Ini adalah kolom yang digunakan untuk target klasifikasi dataset car evaluation. Data ini berisi tentang kategori atau kelas evaluasi mobil atau mobil yang diprediksi masuk ke kategori yang mana. Tipe data adalah kategorikal, yang sudah dilakukan label encoding. Berikut adalah penjelasan mengenai data dan hasil label encoding :</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- good: Mobil dianggap baik. Ini menunjukkan bahwa mobil tersebut memiliki kualitas di atas rata-rata dan dianggap baik. good = 0
+
+- vgood: Singkatan dari &quot;very good&quot; (sangat baik). Ini menandakan bahwa mobil tersebut memiliki kualitas yang sangat tinggi dan dianggap sangat baik. vgood = 2
+
+- acc: Singkatan dari &quot;acceptable&quot; (dapat diterima). Ini mengindikasikan bahwa mobil tersebut memenuhi standar atau kriteria yang cukup sehingga dianggap dapat diterima. acc = 1
+
+- unacc: Singkatan dari &quot;unacceptable&quot; (tidak dapat diterima). Ini menunjukkan bahwa mobil tersebut tidak memenuhi standar atau kriteria tertentu dan dianggap tidak dapat diterima. unacc = 3
+</pre></div>
+</div>
 <p>Data evaluasi mobil sering digunakan untuk membandingkan mobil berdasarkan berbagai atribut ini, dan keputusan pembelian atau evaluasi mobil dapat dipengaruhi oleh nilai-nilai dalam kolom-kolom tersebut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1214,9 +1295,7 @@ Name: class, dtype: int64
 </div>
 <p>Korelasi adalah ukuran statistik yang digunakan untuk mengukur sejauh mana dua variabel terkait satu sama lain. Dalam analisis statistik, korelasi mengukur tingkat hubungan atau hubungan antara dua variabel. Ini adalah alat yang berguna untuk memahami apakah ada ketergantungan antara dua variabel dan dalam arah apa hubungan tersebut. Korelasi sering digunakan untuk menganalisis data dalam berbagai konteks, termasuk ilmu sosial, ilmu ekonomi, ilmu alam, dan analisis data umum.</p>
 <p>Rumus LaTeX untuk mengukur korelasi Pearson (korelasi linear) antara dua variabel <span class="math notranslate nohighlight">\(X\)</span> dan <span class="math notranslate nohighlight">\(Y\)</span> adalah sebagai berikut:</p>
-<p>[
-\rho(X,Y) = \frac{\text{cov}(X,Y)}{\sigma_X \sigma_Y}
-]</p>
+<p><span class="math notranslate nohighlight">\( \rho(X,Y) = \frac{\text{cov}(X,Y)}{\sigma_X \sigma_Y} \)</span></p>
 <p>Penjelasan:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\rho(X,Y)\)</span> adalah koefisien korelasi Pearson antara variabel <span class="math notranslate nohighlight">\(X\)</span> dan <span class="math notranslate nohighlight">\(Y\)</span>.</p></li>
@@ -1551,7 +1630,22 @@ Name: class, dtype: int64
 </div>
 </div>
 </div>
-<p>#Logistic Regression</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
+<h1><strong>Logistic Regression</strong><a class="headerlink" href="#logistic-regression" title="Permalink to this heading">#</a></h1>
+<p>Regresi Logistik (Logistic Regression):
+Regresi logistik adalah metode statistik yang digunakan untuk memodelkan hubungan antara satu atau lebih variabel independen (fitur) dan variabel dependen biner (dua kelas). Ini digunakan untuk tugas klasifikasi di mana tujuan adalah memprediksi probabilitas keanggotaan dalam salah satu dari dua kelas.</p>
+<p>Rumus Logistic Regression:
+Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabilitas antara 0 dan 1. Rumus regresi logistik dapat dituliskan sebagai berikut:</p>
+<p><span class="math notranslate nohighlight">\( P(Y=1) = \frac{1}{1 + e^{-(\beta_0 + \beta_1X_1 + \beta_2X_2 + \ldots + \beta_kX_k)}} \)</span></p>
+<p><span class="math notranslate nohighlight">\( P(Y=0) = 1 - P(Y=1) \)</span></p>
+<p>di mana:</p>
+<p><span class="math notranslate nohighlight">\( P(Y=1) \)</span> adalah probabilitas dari kelas 1.</p>
+<p><span class="math notranslate nohighlight">\( P(Y=0) \)</span> adalah probabilitas dari kelas 0.</p>
+<p><span class="math notranslate nohighlight">\( e \)</span> adalah basis dari logaritma natural.</p>
+<p><span class="math notranslate nohighlight">\( \beta_0, \beta_1, \ldots, \beta_k \)</span> adalah parameter model yang perlu diestimasi.</p>
+<p><span class="math notranslate nohighlight">\( X_1, X_2, \ldots, X_k \)</span> adalah variabel independen (fitur).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logreg</span><span class="o">=</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;newton-cg&#39;</span><span class="p">,</span><span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;multinomial&#39;</span><span class="p">)</span>
@@ -1693,7 +1787,23 @@ Name: class, dtype: int64
 </div>
 </div>
 </div>
-<p>#Random Forest</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="random-forest">
+<h1><strong>Random Forest</strong><a class="headerlink" href="#random-forest" title="Permalink to this heading">#</a></h1>
+<p>Random Forest adalah algoritma machine learning yang termasuk dalam kategori ensemble learning. Ensemble learning menggabungkan prediksi dari beberapa model untuk meningkatkan performa dan kestabilan model. Random Forest bekerja dengan membuat sejumlah besar decision tree (pohon keputusan) pada data pelatihan dan menggabungkan prediksi dari setiap pohon untuk mendapatkan prediksi akhir.</p>
+<p>Beberapa karakteristik Random Forest:</p>
+<ul class="simple">
+<li><p>Setiap pohon dihasilkan secara acak dengan menggunakan subset acak dari data pelatihan.</p></li>
+<li><p>Subsample yang digunakan untuk melatih setiap pohon dapat dipilih dengan atau tanpa penggantian (bootstrap).</p></li>
+<li><p>Prediksi akhir diperoleh dengan menggabungkan hasil dari setiap pohon, misalnya dengan cara mengambil rata-rata (untuk regresi) atau melakukan voting mayoritas (untuk klasifikasi).</p></li>
+</ul>
+<p>Rumus untuk Prediksi dalam Random Forest :</p>
+<p><strong>klasifikasi :</strong></p>
+<p><span class="math notranslate nohighlight">\( \hat{Y} = \text{mode}(Y_1, Y_2, \ldots, Y_n) \)</span></p>
+<p>di mana <span class="math notranslate nohighlight">\(Y_1\)</span> adalah prediksi dari pohon ke-<span class="math notranslate nohighlight">\(i\)</span>, dan <span class="math notranslate nohighlight">\(\hat{Y}\)</span> adalah prediksi akhir.</p>
+<p><strong>regresi :</strong></p>
+<p><span class="math notranslate nohighlight">\( \hat{Y} = \frac{1}{N} \sum_{i=1}^{N} Y_i \)</span>  (untuk regresi)</p>
+<p>dimana <span class="math notranslate nohighlight">\(Y_1\)</span> adalah prediksi dari pohon ke-<span class="math notranslate nohighlight">\(i\)</span>, dan <span class="math notranslate nohighlight">\(\hat{Y}\)</span> adalah prediksi akhir dan <span class="math notranslate nohighlight">\(N\)</span> adalah jumlah pohon.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
@@ -1817,7 +1927,17 @@ Name: class, dtype: int64
 </div>
 </div>
 </div>
-<p>#Learning Curve</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="learning-curve">
+<h1><strong>Learning Curve</strong><a class="headerlink" href="#learning-curve" title="Permalink to this heading">#</a></h1>
+<p>Learning Curve adalah grafik yang menunjukkan bagaimana performa model (biasanya dalam hal akurasi atau error) berubah seiring dengan pertambahan jumlah data pelatihan. Kurva pembelajaran membantu kita memahami sejauh mana model kita dapat belajar dari data yang diberikan dan apakah ada manfaat tambahan dalam mengumpulkan lebih banyak data.</p>
+<p><strong>Beberapa Aspek Learning Curve:</strong></p>
+<ul class="simple">
+<li><p>Underfitting dan Overfitting: Learning curve membantu mengidentifikasi apakah model cenderung underfitting (performa rendah di data pelatihan dan uji) atau overfitting (performa baik di data pelatihan tetapi buruk di data uji).</p></li>
+<li><p>Estimasi Kapasitas Model: Jika kurva pembelajaran menunjukkan bahwa akurasi terus meningkat dengan penambahan data, ini mungkin menunjukkan bahwa model memiliki kapasitas untuk terus belajar dari data tambahan.</p></li>
+</ul>
+<p>Learning Curve:</p>
+<p><span class="math notranslate nohighlight">\({Performance} \, (Y) \, \text{versus Training Data Size} \, (X) \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lc</span><span class="o">=</span><span class="n">learning_curve</span><span class="p">(</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span><span class="n">max_features</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span>
@@ -1875,7 +1995,19 @@ Name: class, dtype: int64
 </div>
 </div>
 </div>
-<p>#Neural Network</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="neural-network">
+<h1><strong>Neural Network</strong><a class="headerlink" href="#neural-network" title="Permalink to this heading">#</a></h1>
+<p>Jaringan saraf tiruan (Neural Network atau disingkat NN) adalah model matematika yang terinspirasi dari struktur dan fungsi jaringan saraf biologis. Ini terdiri dari neuron buatan (unit komputasi) yang diorganisasikan dalam lapisan. Ada lapisan input, satu atau lebih lapisan tersembunyi, dan lapisan output. Neural network digunakan untuk memodelkan hubungan kompleks dan melakukan tugas seperti klasifikasi, regresi, dan pengenalan pola.</p>
+<p>Rumus untuk neuron pada lapisan tersembunyi:</p>
+<p><span class="math notranslate nohighlight">\(
+z_j^{(l)} = \sum_{i=1}^{n^{(l-1)}} w_{ij}^{(l)} a_i^{(l-1)} + b_j^{(l)}
+a_j^{(l)} = f(z_j^{(l)})
+\)</span></p>
+<p>Rumus untuk neuron pada lapisan output:</p>
+<p><span class="math notranslate nohighlight">\(
+\hat{y}_k = f(z_k^{(L)})
+\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using Neural Network</span>
@@ -1909,7 +2041,25 @@ Increase the number of iterations (max_iter) or scale the data as shown in:
 </div>
 </div>
 </div>
-<p>#Decission Tree</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="decission-tree">
+<h1><strong>Decission Tree</strong><a class="headerlink" href="#decission-tree" title="Permalink to this heading">#</a></h1>
+<p>Decission Tree adalah model prediktif yang digunakan dalam machine learning dan data mining. Model ini memecah data menjadi subset yang lebih kecil berdasarkan keputusan pada fitur-fitur yang dimiliki oleh data. Pada setiap simpul (node) pohon, keputusan dibuat berdasarkan fitur tertentu, dan setiap cabang dari simpul tersebut mengarah ke subset data yang sesuai dengan keputusan tersebut. Pemecahan berlanjut hingga mencapai daun (leaf) pohon, yang mewakili prediksi atau kelas.</p>
+<p>Rumus Decission Tree :</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{equation}
+\begin{split}
+&amp; \text{Simpul: } \\
+&amp; \text{Decision}(\text{Feature}_i) = \begin{cases}
+\text{Leaf}_{1} &amp; \text{if } \text{Feature}_i \leq \theta_{1} \\
+\text{Decision}(\text{Feature}_j) &amp; \text{if } \text{Feature}_i &gt; \theta_{1} \text{ and } \text{Feature}_j \leq \theta_{2} \\
+\text{Leaf}_{2} &amp; \text{if } \text{Feature}_i &gt; \theta_{1} \text{ and } \text{Feature}_j &gt; \theta_{2} \text{ and } \text{Feature}_k \leq \theta_{3} \\
+\vdots \\
+\text{Leaf}_{k} &amp; \text{otherwise}
+\end{cases}
+\end{split}
+\end{equation}
+ \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decission_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
@@ -2928,6 +3078,31 @@ Successfully installed ansi2html-1.8.0 category-encoders-2.6.3 dash-2.14.1 dash-
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>Penjelasan Dataset</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-mengenai-fitur-fitur-yang-ada-dalam-dataset-car-evaluation"><strong>Penjelasan mengenai fitur-fitur yang ada dalam dataset car evaluation :</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penjelasan-mengenai-fitu-target-yang-digunakan-untuk-klasifikasi-dalam-dataset-car-evaluation"><strong>Penjelasan mengenai fitu target yang digunakan untuk klasifikasi dalam dataset car evaluation :</strong></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class"><strong>Class</strong></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression"><strong>Logistic Regression</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest"><strong>Random Forest</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-curve"><strong>Learning Curve</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#neural-network"><strong>Neural Network</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#decission-tree"><strong>Decission Tree</strong></a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
               
             
           </div>
