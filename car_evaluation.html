@@ -177,6 +177,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
+
 </ul>
 
     </div>
@@ -376,6 +377,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class"><strong>Class</strong></a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlah-data-1729"><strong>Jumlah Data</strong> = <strong>1729</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression"><strong>Logistic Regression</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest"><strong>Random Forest</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-curve"><strong>Learning Curve</strong></a></li>
@@ -400,7 +402,7 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="penjelasan-mengenai-fitur-fitur-yang-ada-dalam-dataset-car-evaluation">
 <h1><strong>Penjelasan mengenai fitur-fitur yang ada dalam dataset car evaluation :</strong><a class="headerlink" href="#penjelasan-mengenai-fitur-fitur-yang-ada-dalam-dataset-car-evaluation" title="Permalink to this heading">#</a></h1>
 <p><strong>1. Buying</strong></p>
-<p>Kolom ini memberikan informasi tentang kategori atau tingkat harga mobil saat pembelian. Di dalamnya terdapat nilai-nilai seperti “vhigh” “hight” “low” atau “med” yang menunjukkan seberapa mahal mobil saat dibeli. Tipe data adalah kategorikal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<p>Kolom ini memberikan informasi tentang kategori atau tingkat harga mobil saat pembelian. Di dalamnya terdapat nilai-nilai seperti “vhigh” “hight” “low” atau “med” yang menunjukkan seberapa mahal mobil saat dibeli. Tipe data adalah ordinal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- vhigh (sangat tinggi) = 0
 - low (rendah) = 1
 - med (sedang) = 2
@@ -408,7 +410,7 @@ document.write(`
 </pre></div>
 </div>
 <p><strong>2. Maint</strong></p>
-<p>Kolom ini berisi informasi tentang biaya perawatan mobil. Kolom ini berisi nilai-nilai seperti “vhigh” “low” “med” atau “high” untuk menunjukkan tingkat biaya perawatan mobil. Tipe data adalah kategorikal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<p>Kolom ini berisi informasi tentang biaya perawatan mobil. Kolom ini berisi nilai-nilai seperti “vhigh” “low” “med” atau “high” untuk menunjukkan tingkat biaya perawatan mobil. Tipe data adalah ordinal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- vhigh (sangat tinggi) : 0
 - low (rendah) = 1
 - med (sedang) = 2
@@ -431,14 +433,14 @@ document.write(`
 </pre></div>
 </div>
 <p><strong>5. lug_boot</strong></p>
-<p>Kolom ini memberikan informasi ukuran bagasi atau bagian penyimpanan mobil. Nilai-nilai dalam data ini adalah “small” “big” atau “med” untuk menggambarkan ukuran bagasi. Tipe data adalah kategorikal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<p>Kolom ini memberikan informasi ukuran bagasi atau bagian penyimpanan mobil. Nilai-nilai dalam data ini adalah “small” “big” atau “med” untuk menggambarkan ukuran bagasi. Tipe data adalah ordinal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- small (kecil) = 0
 - big (besar) = 1
 - med (sedang) = 2
 </pre></div>
 </div>
 <p><strong>6. safety</strong></p>
-<p>Kolom ini berisi informasi tentang sejauh mana mobil memiliki fitur keamanan atau tingkat keamanan. Nilai dalam data ini adalah “high” “med” dan “low” untuk menggambarkan tingkat keamanan mobil. Tipe data adalah kategorikal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
+<p>Kolom ini berisi informasi tentang sejauh mana mobil memiliki fitur keamanan atau tingkat keamanan. Nilai dalam data ini adalah “high” “med” dan “low” untuk menggambarkan tingkat keamanan mobil. Tipe data adalah ordinal. Data tersebut sudah dilakukan encoding dengan hasil sebagai berikut :</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- high (tinggi) = 0
 - med (sedang) = 1
 - low (rendah) = 2
@@ -460,6 +462,10 @@ document.write(`
 </pre></div>
 </div>
 <p>Data evaluasi mobil sering digunakan untuk membandingkan mobil berdasarkan berbagai atribut ini, dan keputusan pembelian atau evaluasi mobil dapat dipengaruhi oleh nilai-nilai dalam kolom-kolom tersebut.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="jumlah-data-1729">
+<h1><strong>Jumlah Data</strong> = <strong>1729</strong><a class="headerlink" href="#jumlah-data-1729" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menghubungkan dengan google drive</span>
@@ -528,6 +534,19 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menampilkan jumlah baris dan kolom pada data</span>
+<span class="n">data</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1728, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menampilkan data</span>
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
@@ -535,7 +554,7 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-40e2e063-707f-4fcc-b37f-74a62fbb6068" class="colab-df-container">
+  <div id="df-fdfeb5fd-03c7-41bf-a4c5-c1d6a8595238" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -620,7 +639,7 @@ document.write(`
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-40e2e063-707f-4fcc-b37f-74a62fbb6068')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-fdfeb5fd-03c7-41bf-a4c5-c1d6a8595238')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -672,12 +691,12 @@ document.write(`
 
     <script>
       const buttonEl =
-        document.querySelector('#df-40e2e063-707f-4fcc-b37f-74a62fbb6068 button.colab-df-convert');
+        document.querySelector('#df-fdfeb5fd-03c7-41bf-a4c5-c1d6a8595238 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-40e2e063-707f-4fcc-b37f-74a62fbb6068');
+        const element = document.querySelector('#df-fdfeb5fd-03c7-41bf-a4c5-c1d6a8595238');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -697,8 +716,8 @@ document.write(`
   </div>
 
 
-<div id="df-456c7a92-7912-42cb-915d-80ce909ed88a">
-  <button class="colab-df-quickchart" onclick="quickchart('df-456c7a92-7912-42cb-915d-80ce909ed88a')"
+<div id="df-abccfb63-d836-43b4-9469-3a486d4cb5e1">
+  <button class="colab-df-quickchart" onclick="quickchart('df-abccfb63-d836-43b4-9469-3a486d4cb5e1')"
             title="Suggest charts"
             style="display:none;">
 
@@ -817,7 +836,7 @@ document.write(`
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-456c7a92-7912-42cb-915d-80ce909ed88a button');
+        document.querySelector('#df-abccfb63-d836-43b4-9469-3a486d4cb5e1 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -855,8 +874,8 @@ memory usage: 94.6+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span> <span class="c1"># merupakan perulangan yang mengiterasi melalui setiap kolom dalam DataFrame data</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">())</span> <span class="c1">#mencetak nilai unik dan jumlah nilai unik dari setiap kolom, dipisahkan oleh tab, untuk menganalisis keberagaman data dalam DataFrame.</span>
 </pre></div>
 </div>
 </div>
@@ -874,7 +893,8 @@ memory usage: 94.6+ KB
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#mencetak frekuensi masing-masing nilai unik dalam setiap kolom DataFrame</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
     <span class="nb">print</span><span class="p">()</span>
 </pre></div>
@@ -973,21 +993,24 @@ Name: class, dtype: int64
 <p>Di sini, <span class="math notranslate nohighlight">\(x_i\)</span> adalah label atau nilai kategori ke-<span class="math notranslate nohighlight">\(i\)</span>, dan hasil Label Encoding adalah angka ke-<span class="math notranslate nohighlight">\(i\)</span>. Label Encoding mengasosiasikan setiap nilai kategori dengan nomor yang unik sesuai urutan kemunculan dalam data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#mengimpor modul LabelEncoder dari pustaka Scikit-learn (sklearn), yang digunakan untuk mengonversi label kategori menjadi nilai numerik</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">le</span><span class="o">=</span><span class="n">LabelEncoder</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#membuat variabel le untuk melakukan proses label encoding</span>
+<span class="n">le</span><span class="o">=</span><span class="n">LabelEncoder</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#perulangan dan mengonversi nilai kategori dalam setiap kolom DataFrame data menjadi nilai numerik.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
     <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -995,13 +1018,14 @@ Name: class, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menampilkan data yang sudah dilakukan proses label encoding</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-c58e0dce-8cc5-4df9-9985-5ea708a86a65" class="colab-df-container">
+  <div id="df-ef04da0a-d431-427c-936f-4c24a80bff98" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1086,7 +1110,7 @@ Name: class, dtype: int64
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-c58e0dce-8cc5-4df9-9985-5ea708a86a65')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-ef04da0a-d431-427c-936f-4c24a80bff98')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1138,12 +1162,12 @@ Name: class, dtype: int64
 
     <script>
       const buttonEl =
-        document.querySelector('#df-c58e0dce-8cc5-4df9-9985-5ea708a86a65 button.colab-df-convert');
+        document.querySelector('#df-ef04da0a-d431-427c-936f-4c24a80bff98 button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-c58e0dce-8cc5-4df9-9985-5ea708a86a65');
+        const element = document.querySelector('#df-ef04da0a-d431-427c-936f-4c24a80bff98');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1163,8 +1187,8 @@ Name: class, dtype: int64
   </div>
 
 
-<div id="df-43d61434-df8b-4b11-bb3c-56ab842b8832">
-  <button class="colab-df-quickchart" onclick="quickchart('df-43d61434-df8b-4b11-bb3c-56ab842b8832')"
+<div id="df-81ea9e2f-bdcb-4933-a968-f1da1a3b6300">
+  <button class="colab-df-quickchart" onclick="quickchart('df-81ea9e2f-bdcb-4933-a968-f1da1a3b6300')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1283,7 +1307,7 @@ Name: class, dtype: int64
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-43d61434-df8b-4b11-bb3c-56ab842b8832 button');
+        document.querySelector('#df-81ea9e2f-bdcb-4933-a968-f1da1a3b6300 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1311,7 +1335,8 @@ Name: class, dtype: int64
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Kode ini membuat heatmap korelasi antar kolom DataFrame.</span>
+<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span><span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1334,13 +1359,14 @@ Name: class, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menampilkan data x sebagai fitur label</span>
+<span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ad76510a-ad04-4221-a0b1-28f8cfe1bff9" class="colab-df-container">
+  <div id="df-aceed080-ef03-4a4e-96b2-b5a96c4d8cac" class="colab-df-container">
     <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1392,7 +1418,7 @@ Name: class, dtype: int64
     <div class="colab-df-buttons">
 
   <div class="colab-df-container">
-    <button class="colab-df-convert" onclick="convertToInteractive('df-ad76510a-ad04-4221-a0b1-28f8cfe1bff9')"
+    <button class="colab-df-convert" onclick="convertToInteractive('df-aceed080-ef03-4a4e-96b2-b5a96c4d8cac')"
             title="Convert this dataframe to an interactive table."
             style="display:none;">
 
@@ -1444,12 +1470,12 @@ Name: class, dtype: int64
 
     <script>
       const buttonEl =
-        document.querySelector('#df-ad76510a-ad04-4221-a0b1-28f8cfe1bff9 button.colab-df-convert');
+        document.querySelector('#df-aceed080-ef03-4a4e-96b2-b5a96c4d8cac button.colab-df-convert');
       buttonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
 
       async function convertToInteractive(key) {
-        const element = document.querySelector('#df-ad76510a-ad04-4221-a0b1-28f8cfe1bff9');
+        const element = document.querySelector('#df-aceed080-ef03-4a4e-96b2-b5a96c4d8cac');
         const dataTable =
           await google.colab.kernel.invokeFunction('convertToInteractive',
                                                     [key], {});
@@ -1469,8 +1495,8 @@ Name: class, dtype: int64
   </div>
 
 
-<div id="df-527dd2f1-b1b0-4f69-902c-00a30a589951">
-  <button class="colab-df-quickchart" onclick="quickchart('df-527dd2f1-b1b0-4f69-902c-00a30a589951')"
+<div id="df-fdb1529a-0627-4c14-8077-200d320bfe92">
+  <button class="colab-df-quickchart" onclick="quickchart('df-fdb1529a-0627-4c14-8077-200d320bfe92')"
             title="Suggest charts"
             style="display:none;">
 
@@ -1589,7 +1615,7 @@ Name: class, dtype: int64
     }
     (() => {
       let quickchartButtonEl =
-        document.querySelector('#df-527dd2f1-b1b0-4f69-902c-00a30a589951 button');
+        document.querySelector('#df-fdb1529a-0627-4c14-8077-200d320bfe92 button');
       quickchartButtonEl.style.display =
         google.colab.kernel.accessAllowed ? 'block' : 'none';
     })();
@@ -1601,14 +1627,16 @@ Name: class, dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#mengimpor fungsi train_test_split dari Scikit-learn untuk membagi dataset menjadi data latih dan uji</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#membagi data latih dan data uji dengan perbandingan data latih 70% dan data uji 30%</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1616,21 +1644,18 @@ Name: class, dtype: int64
 <p>#Model Selection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span><span class="n">cross_val_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span>
-<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
-<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span> <span class="c1">#import model logistic regression</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="p">,</span><span class="n">cross_val_score</span> <span class="c1">#import fungsi untuk membagi dataset dan melakukan cross validation</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span> <span class="c1">#import fungsi untuk mengevaluasi performa model klasifikasi.</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span> <span class="c1">#import fungsi untuk melakukan pencarian parameter terbaik dalam model menggunakan metode grid search.</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span> <span class="c1">#import fungsi untuk mengukur tingkat akurasi dalam evaluasi performa model.</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span> <span class="c1">#import fungsi untuk mengubah teks menjadi representasi vektor hitungan kata.</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span> <span class="c1">#import fungsi untuk membuat model klasifikasi dengan decission tree</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPClassifier</span> <span class="c1">#untuk membuat dan melatih model jaringan saraf pada data latih (X_train, y_train)</span>
 </pre></div>
 </div>
 </div>
 </div>
-</section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
 <h1><strong>Logistic Regression</strong><a class="headerlink" href="#logistic-regression" title="Permalink to this heading">#</a></h1>
@@ -1648,14 +1673,16 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 <p><span class="math notranslate nohighlight">\( X_1, X_2, \ldots, X_k \)</span> adalah variabel independen (fitur).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logreg</span><span class="o">=</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;newton-cg&#39;</span><span class="p">,</span><span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;multinomial&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#membuat objek model regresi logistik dengan menggunakan solver &#39;newton-cg&#39; dan multi_class &#39;multinomial&#39; dalam Scikit-learn.</span>
+<span class="n">logreg</span><span class="o">=</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;newton-cg&#39;</span><span class="p">,</span><span class="n">multi_class</span><span class="o">=</span><span class="s1">&#39;multinomial&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#untuk melatih model menggunakan metode fit pada logistic regression dan untuk melatih model dengan data latih (X_train dan y_train).</span>
+<span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1664,14 +1691,16 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred</span><span class="o">=</span><span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#untuk melakukan prediksi pada data uji X_test menggunakan model regresi logistik (logreg) yang telah dilatih sebelumnya</span>
+<span class="n">pred</span><span class="o">=</span><span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menghitung dan mengembalikan nilai akurasi model regresi logistik (logreg) pada data uji (X_test dan y_test).</span>
+<span class="n">logreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1683,21 +1712,26 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">learning_curve</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengimpor fungsi learning_curve dari Scikit-learn</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">learning_curve</span>
 
+<span class="c1"># Membuat learning curve dengan menggunakan model logreg, data latih, dan validasi silang 10-fold</span>
+<span class="n">lc</span> <span class="o">=</span> <span class="n">learning_curve</span><span class="p">(</span><span class="n">logreg</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">lc</span><span class="o">=</span><span class="n">learning_curve</span><span class="p">(</span><span class="n">logreg</span><span class="p">,</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">size</span><span class="o">=</span><span class="n">lc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">train_score</span><span class="o">=</span><span class="p">[</span><span class="n">lc</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
-<span class="n">test_score</span><span class="o">=</span><span class="p">[</span><span class="n">lc</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
-<span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="n">train_score</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="n">test_score</span><span class="p">)</span>
+<span class="c1"># Menyimpan informasi ukuran set pelatihan serta skor rata-rata dari hasil pembelajaran</span>
+<span class="n">size</span> <span class="o">=</span> <span class="n">lc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">train_score</span> <span class="o">=</span> <span class="p">[</span><span class="n">lc</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+<span class="n">test_score</span> <span class="o">=</span> <span class="p">[</span><span class="n">lc</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)]</span>
+
+<span class="c1"># Menampilkan grafik learning curve dengan menggunakan matplotlib</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">train_score</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">size</span><span class="p">,</span> <span class="n">test_score</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7a9d798db0a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7adf4c0c5810&gt;]
 </pre></div>
 </div>
 <img alt="_images/fd0e10a7ff2e3786f76ef22ebac2101c91cb9ba84f57d9b5d440e18c2f5eb7f0.png" src="_images/fd0e10a7ff2e3786f76ef22ebac2101c91cb9ba84f57d9b5d440e18c2f5eb7f0.png" />
@@ -1705,7 +1739,10 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">learning_curve</span><span class="p">,</span><span class="n">cross_val_score</span><span class="p">,</span><span class="n">validation_curve</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Mengimpor fungsi learning_curve, cross_val_score, dan validation_curve dari Scikit-learn</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">learning_curve</span><span class="p">,</span><span class="n">cross_val_score</span><span class="p">,</span><span class="n">validation_curve</span>
+
+<span class="c1"># Menentukan rentang parameter yang akan diuji pada kurva validasi</span>
 <span class="n">param_range</span><span class="o">=</span><span class="p">[</span><span class="mf">0.0001</span><span class="p">,</span><span class="mf">0.001</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">curve</span><span class="o">=</span><span class="n">validation_curve</span><span class="p">(</span><span class="n">logreg</span><span class="p">,</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">param_name</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>
     <span class="n">param_range</span><span class="o">=</span><span class="n">param_range</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,)</span>
@@ -1715,7 +1752,8 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">curve</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#hasil dari fungsi validation_curve. curve berisi skor validasi dari model regresi logistik (logreg) yang telah dilatih dengan variasi parameter &#39;C&#39;</span>
+<span class="n">curve</span>
 </pre></div>
 </div>
 </div>
@@ -1734,9 +1772,12 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">param_range</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghitung rata-rata skor pelatihan dan pengujian dari hasil kurva validasi</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">param_range</span><span class="p">)</span>
 <span class="n">train_score</span><span class="o">=</span><span class="p">[</span><span class="n">curve</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span>
 <span class="n">test_score</span><span class="o">=</span><span class="p">[</span><span class="n">curve</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span>
+
+<span class="c1"># Menyiapkan dan menampilkan grafik learning curve dengan variasi parameter &#39;C&#39;</span>
 <span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param_range</span><span class="p">,</span><span class="n">train_score</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param_range</span><span class="p">,</span><span class="n">test_score</span><span class="p">)</span>
@@ -1750,9 +1791,13 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_grid</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menentukan grid parameter yang akan diuji dalam pencarian grid</span>
+<span class="n">param_grid</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;C&#39;</span><span class="p">:[</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span>
            <span class="s1">&#39;solver&#39;</span><span class="p">:[</span><span class="s1">&#39;newton-cg&#39;</span><span class="p">,</span> <span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span> <span class="s1">&#39;sag&#39;</span><span class="p">],</span>
            <span class="s1">&#39;multi_class&#39;</span><span class="p">:[</span><span class="s1">&#39;multinomial&#39;</span><span class="p">]}</span>
+
+<span class="c1">#Membuat objek GridSearchCV dengan model LogisticRegression dan grid parameter yang ditentukan,</span>
+<span class="c1"># serta menggunakan validasi silang 5-fold dan pekerjaan paralel dengan semua core CPU yang tersedia</span>
 <span class="n">grid</span><span class="o">=</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span><span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1760,7 +1805,8 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menggunakan metode fit pada objek GridSearchCV (grid) untuk melakukan pencarian grid pada data latih (X_train dan y_train).</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1775,7 +1821,10 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#menampilkan kombinasi parameter terbaik yang menghasilkan performa terbaik</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+
+<span class="c1">#menampilkan skor cross validation terbaik yang dicapai oleh model menggunakan kombinasi parameter</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1806,7 +1855,10 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 <p>dimana <span class="math notranslate nohighlight">\(Y_1\)</span> adalah prediksi dari pohon ke-<span class="math notranslate nohighlight">\(i\)</span>, dan <span class="math notranslate nohighlight">\(\hat{Y}\)</span> adalah prediksi akhir dan <span class="math notranslate nohighlight">\(N\)</span> adalah jumlah pohon.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengimpor kelas RandomForestClassifier dari Scikit-learn</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="c1"># Mengimpor fungsi f1_score untuk mengukur skor F1</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span>
 </pre></div>
 </div>
@@ -1814,15 +1866,23 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rfc</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat objek RandomForestClassifier dengan menggunakan semua core CPU yang tersedia (n_jobs=-1)</span>
+<span class="c1"># dan menetapkan nilai seed random (random_state=51) untuk reproduktibilitas hasil.</span>
+<span class="n">rfc</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Melatih model RandomForestClassifier menggunakan data latih (X_train, y_train)</span>
+<span class="n">rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Mencetak akurasi model pada data uji (X_test, y_test)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rfc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">))</span>
+
+<span class="c1"># Mencetak skor F1 pada data uji dengan menggunakan prediksi model</span>
+<span class="c1"># &#39;average=&#39;macro&#39;&#39; menunjukkan bahwa skor F1 dihitung sebagai rata-rata dari semua kelas</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">rfc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span><span class="n">average</span><span class="o">=</span><span class="s1">&#39;macro&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -1836,12 +1896,19 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_range</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menentukan rentang parameter &#39;n_estimators&#39; yang akan diuji pada kurva validasi</span>
+<span class="n">param_range</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>
+
+<span class="c1"># Menghasilkan kurva validasi untuk &#39;n_estimators&#39; pada model RandomForestClassifier</span>
+<span class="c1"># Data latih (X_train, y_train) dibagi menjadi 5 lipatan dalam validasi silang</span>
 <span class="n">curve</span><span class="o">=</span><span class="n">validation_curve</span><span class="p">(</span><span class="n">rfc</span><span class="p">,</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">param_name</span><span class="o">=</span><span class="s1">&#39;n_estimators&#39;</span><span class="p">,</span>
     <span class="n">param_range</span><span class="o">=</span><span class="n">param_range</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
+<span class="c1"># Menghitung rata-rata skor pelatihan dan pengujian dari hasil kurva validasi</span>
 <span class="n">train_score</span><span class="o">=</span><span class="p">[</span><span class="n">curve</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">param_range</span><span class="p">))]</span>
 <span class="n">test_score</span><span class="o">=</span><span class="p">[</span><span class="n">curve</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">param_range</span><span class="p">))]</span>
+
+<span class="c1"># Menyiapkan dan menampilkan grafik evaluasi kinerja dengan variasi parameter &#39;n_estimators&#39;</span>
 <span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param_range</span><span class="p">,</span><span class="n">train_score</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param_range</span><span class="p">,</span><span class="n">test_score</span><span class="p">)</span>
@@ -1855,12 +1922,20 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_range</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menentukan rentang parameter &#39;max_features&#39; yang akan diuji pada kurva validasi</span>
+<span class="c1"># Rentangnya sesuai dengan jumlah fitur dalam data</span>
+<span class="n">param_range</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Menghasilkan kurva validasi untuk &#39;max_features&#39; pada model RandomForestClassifier</span>
+<span class="c1"># Data latih (X_train, y_train) dibagi menjadi 5 lipatan dalam validasi silang</span>
 <span class="n">curve</span><span class="o">=</span><span class="n">validation_curve</span><span class="p">(</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">),</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
     <span class="n">param_name</span><span class="o">=</span><span class="s1">&#39;max_features&#39;</span><span class="p">,</span><span class="n">param_range</span><span class="o">=</span><span class="n">param_range</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 
+<span class="c1"># Menghitung rata-rata skor pelatihan dan pengujian dari hasil kurva validasi</span>
 <span class="n">train_score</span><span class="o">=</span><span class="p">[</span><span class="n">curve</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">param_range</span><span class="p">))]</span>
 <span class="n">test_score</span><span class="o">=</span><span class="p">[</span><span class="n">curve</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">param_range</span><span class="p">))]</span>
+
+<span class="c1"># Menyiapkan dan menampilkan grafik evaluasi kinerja dengan variasi parameter &#39;max_features&#39;.</span>
 <span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param_range</span><span class="p">,</span><span class="n">train_score</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">param_range</span><span class="p">,</span><span class="n">test_score</span><span class="p">)</span>
@@ -1874,7 +1949,8 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">param_grid</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;criterion&#39;</span><span class="p">:[</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span><span class="s1">&#39;entropy&#39;</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menentukan grid parameter yang akan diuji pada pencarian grid untuk model RandomForestClassifier</span>
+<span class="n">param_grid</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;criterion&#39;</span><span class="p">:[</span><span class="s1">&#39;gini&#39;</span><span class="p">,</span><span class="s1">&#39;entropy&#39;</span><span class="p">],</span>
            <span class="s1">&#39;max_depth&#39;</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">],</span>
            <span class="s1">&#39;max_features&#39;</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;auto&#39;</span><span class="p">],</span>
            <span class="s1">&#39;max_leaf_nodes&#39;</span><span class="p">:[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="kc">None</span><span class="p">],}</span>
@@ -1884,7 +1960,9 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_rfc</span><span class="o">=</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat objek GridSearchCV dengan model RandomForestClassifier dan grid parameter yang ditentukan,</span>
+<span class="c1"># serta menggunakan validasi silang 10-fold dan pekerjaan paralel dengan semua core CPU yang tersedia</span>
+<span class="n">grid_rfc</span><span class="o">=</span><span class="n">GridSearchCV</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">),</span>
                   <span class="n">param_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1892,7 +1970,8 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grid_rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Melatih model RandomForestClassifier menggunakan pencarian grid pada data latih (X_train, y_train)</span>
+<span class="n">grid_rfc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1915,7 +1994,11 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">grid_rfc</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mencetak hasil terbaik dari pencarian grid pada model RandomForestClassifier</span>
+<span class="c1"># menampilkan kombinasi parameter terbaik</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">grid_rfc</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+
+<span class="c1"># menampilkan skor validasi silang terbaik yang dicapai oleh model menggunakan kombinasi parameter tersebut</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">grid_rfc</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1940,11 +2023,18 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 <p><span class="math notranslate nohighlight">\({Performance} \, (Y) \, \text{versus Training Data Size} \, (X) \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lc</span><span class="o">=</span><span class="n">learning_curve</span><span class="p">(</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span><span class="n">max_features</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menghasilkan kurva pembelajaran untuk model RandomForestClassifier</span>
+<span class="c1"># dengan parameter tertentu pada data latih (X_train, y_train)</span>
+<span class="c1"># Data latih dibagi menjadi 5 lipatan dalam validasi silang.</span>
+<span class="n">lc</span><span class="o">=</span><span class="n">learning_curve</span><span class="p">(</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span><span class="n">max_features</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span>
                                              <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,),</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">,</span><span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Menghitung rata-rata skor pelatihan dan pengujian dari hasil kurva pembelajaran</span>
 <span class="n">size</span><span class="o">=</span><span class="n">lc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">train_score</span><span class="o">=</span><span class="p">[</span><span class="n">lc</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
 <span class="n">test_score</span><span class="o">=</span><span class="p">[</span><span class="n">lc</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
+
+<span class="c1"># Menyiapkan dan menampilkan grafik kurva pembelajaran dengan menggunakan matplotlib</span>
 <span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="n">train_score</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">size</span><span class="p">,</span><span class="n">test_score</span><span class="p">)</span>
@@ -1952,7 +2042,7 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7a9d7817f7f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7adf472b8370&gt;]
 </pre></div>
 </div>
 <img alt="_images/e87fb63a79e56cecdc881e65de6103568fa29446e42a57b2b79361189457754e.png" src="_images/e87fb63a79e56cecdc881e65de6103568fa29446e42a57b2b79361189457754e.png" />
@@ -1960,7 +2050,10 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mencetak nama kolom dalam dataset (X.columns).</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="c1"># Mencetak tingkat pentingnya masing-masing fitur yang diberikan oleh model RandomForestClassifier (rfc.feature_importances_).</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rfc</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1974,7 +2067,9 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train1</span><span class="p">,</span> <span class="n">X_test1</span><span class="p">,</span> <span class="n">y_train1</span><span class="p">,</span> <span class="n">y_test1</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">[[</span><span class="s1">&#39;buying&#39;</span><span class="p">,</span> <span class="s1">&#39;maint&#39;</span><span class="p">,</span> <span class="s1">&#39;persons&#39;</span><span class="p">,</span> <span class="s1">&#39;lug_boot&#39;</span><span class="p">,</span> <span class="s1">&#39;safety&#39;</span><span class="p">]],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membagi dataset menjadi data latih dan uji dengan memilih hanya beberapa kolom tertentu ([&#39;buying&#39;, &#39;maint&#39;, &#39;persons&#39;, &#39;lug_boot&#39;, &#39;safety&#39;])</span>
+<span class="c1"># Data latih: X_train1, y_train1. Data uji: X_test1, y_test1. Rasio uji sebesar 30%, seed random adalah 42</span>
+<span class="n">X_train1</span><span class="p">,</span> <span class="n">X_test1</span><span class="p">,</span> <span class="n">y_train1</span><span class="p">,</span> <span class="n">y_test1</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">[[</span><span class="s1">&#39;buying&#39;</span><span class="p">,</span> <span class="s1">&#39;maint&#39;</span><span class="p">,</span> <span class="s1">&#39;persons&#39;</span><span class="p">,</span> <span class="s1">&#39;lug_boot&#39;</span><span class="p">,</span> <span class="s1">&#39;safety&#39;</span><span class="p">]],</span>
     <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1982,9 +2077,12 @@ Fungsi logistik atau sigmoid function digunakan untuk menghasilkan nilai probabi
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rfc1</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span><span class="n">max_features</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat dan melatih model RandomForestClassifier pada dataset yang sudah dibagi (X_train1, y_train1).</span>
+<span class="n">rfc1</span><span class="o">=</span><span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span><span class="p">,</span><span class="n">max_features</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span>
     <span class="n">max_leaf_nodes</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span><span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">rfc1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train1</span><span class="p">,</span><span class="n">y_train1</span><span class="p">)</span>
+
+<span class="c1"># Mencetak akurasi model pada data uji yang sudah dibagi (X_test1, y_test1)</span>
 <span class="n">rfc1</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test1</span><span class="p">,</span><span class="n">y_test1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2010,7 +2108,7 @@ a_j^{(l)} = f(z_j^{(l)})
 \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Using Neural Network</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat dan melatih model MLPClassifier (jaringan saraf) dengan konfigurasi tertentu</span>
 <span class="n">nn_clf</span> <span class="o">=</span> <span class="n">MLPClassifier</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s1">&#39;lbfgs&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span><span class="n">hidden_layer_sizes</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">nn_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
 </pre></div>
@@ -2031,7 +2129,8 @@ Increase the number of iterations (max_iter) or scale the data as shown in:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy Score:&quot;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">nn_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mencetak skor akurasi model jaringan saraf pada data uji menggunakan accuracy_score</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy Score:&quot;</span><span class="p">,</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">nn_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
@@ -2062,7 +2161,8 @@ Increase the number of iterations (max_iter) or scale the data as shown in:
  \)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decission_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Membuat dan melatih model DecisionTreeClassifier pada data latih (X_train, y_train)</span>
+<span class="n">decission_tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
 <span class="n">decission_tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2072,14 +2172,15 @@ Increase the number of iterations (max_iter) or scale the data as shown in:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">decission_tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Melakukan prediksi pada data uji (X_test) menggunakan model DecisionTreeClassifier</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">decission_tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># evaluating the model</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mencetak skor akurasi pelatihan dan pengujian dari model DecisionTreeClassifier</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training Accuracy :&quot;</span><span class="p">,</span> <span class="n">decission_tree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing Accuracy :&quot;</span><span class="p">,</span> <span class="n">decission_tree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">))</span>
 </pre></div>
@@ -2094,14 +2195,16 @@ Testing Accuracy : 0.9653179190751445
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">joblib</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mengimpor modul joblib untuk menyimpan dan memuat model</span>
+<span class="kn">import</span> <span class="nn">joblib</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logreg_model</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/psd/car/pickle_model/logisticref_car_model.pkl&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menyimpan model regresi logistik (logreg) dalam bentuk file pickle menggunakan joblib.</span>
+<span class="n">logreg_model</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/psd/car/pickle_model/logisticref_car_model.pkl&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
 <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">logreg</span><span class="p">,</span><span class="n">logreg_model</span><span class="p">)</span>
 <span class="n">logreg_model</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -2110,7 +2213,8 @@ Testing Accuracy : 0.9653179190751445
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rfc_model</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/psd/car/pickle_model/randomforest_car_model.pkl&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menyimpan model random forest classifier (rfc) dalam bentuk file pickle menggunakan joblib.</span>
+<span class="n">rfc_model</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/psd/car/pickle_model/randomforest_car_model.pkl&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
 <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">rfc</span><span class="p">,</span> <span class="n">rfc_model</span><span class="p">)</span>
 <span class="n">rfc_model</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -2119,7 +2223,8 @@ Testing Accuracy : 0.9653179190751445
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nn_clf_model</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/psd/car/pickle_model/nn_clf_car_model.pkl&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menyimpan model neural network (nn) dalam bentuk file pickle menggunakan joblib.</span>
+<span class="n">nn_clf_model</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/psd/car/pickle_model/nn_clf_car_model.pkl&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
 <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">nn_clf</span><span class="p">,</span><span class="n">nn_clf_model</span><span class="p">)</span>
 <span class="n">nn_clf_model</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -2128,7 +2233,8 @@ Testing Accuracy : 0.9653179190751445
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">decission_tree_model</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/psd/car/pickle_model/decission_tree_car_model.pkl&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Menyimpan model decission tree dalam bentuk file pickle menggunakan joblib.</span>
+<span class="n">decission_tree_model</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;/content/drive/My Drive/psd/car/pickle_model/decission_tree_car_model.pkl&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span>
 <span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">decission_tree</span><span class="p">,</span> <span class="n">decission_tree_model</span><span class="p">)</span>
 <span class="n">decission_tree_model</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -2169,65 +2275,65 @@ Testing Accuracy : 0.9653179190751445
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pycaret
-  Downloading pycaret-3.1.0-py3-none-any.whl (483 kB)
-?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/483.9 kB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
-     ━━━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">235.5/483.9 kB</span> <span class=" -Color -Color-Red">6.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:01</span>
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">483.9/483.9 kB</span> <span class=" -Color -Color-Red">7.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: ipython&gt;=5.5.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (7.34.0)
-Requirement already satisfied: ipywidgets&gt;=7.6.5 in /usr/local/lib/python3.10/dist-packages (from pycaret) (7.7.1)
-Requirement already satisfied: tqdm&gt;=4.62.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (4.66.1)
-Requirement already satisfied: numpy&lt;1.24,&gt;=1.21 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.23.5)
-Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.3.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.5.3)
-Requirement already satisfied: jinja2&gt;=1.2 in /usr/local/lib/python3.10/dist-packages (from pycaret) (3.1.2)
-Collecting scipy~=1.10.1 (from pycaret)
-  Downloading scipy-1.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">54.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: joblib&gt;=1.2.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.3.2)
-Requirement already satisfied: scikit-learn&lt;1.3.0,&gt;=1.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.2.2)
-Collecting pyod&gt;=1.0.8 (from pycaret)
-  Downloading pyod-1.1.1.tar.gz (159 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">159.4/159.4 kB</span> <span class=" -Color -Color-Red">18.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25h  Preparing metadata (setup.py) ... ?25l?25hdone
-Requirement already satisfied: imbalanced-learn&gt;=0.8.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (0.10.1)
-Collecting category-encoders&gt;=2.4.0 (from pycaret)
+  Downloading pycaret-3.2.0-py3-none-any.whl (484 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">484.7/484.7 kB</span> <span class=" -Color -Color-Red">5.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting category-encoders&gt;=2.4.0 (from pycaret)
   Downloading category_encoders-2.6.3-py2.py3-none-any.whl (81 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">81.9/81.9 kB</span> <span class=" -Color -Color-Red">8.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: lightgbm&gt;=3.0.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (4.1.0)
-Requirement already satisfied: numba&gt;=0.55.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (0.58.1)
-Requirement already satisfied: requests&gt;=2.27.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (2.31.0)
-Requirement already satisfied: psutil&gt;=5.9.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (5.9.5)
-Requirement already satisfied: markupsafe&gt;=2.0.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (2.1.3)
-Requirement already satisfied: importlib-metadata&gt;=4.12.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (6.8.0)
-Requirement already satisfied: nbformat&gt;=4.2.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (5.9.2)
-Requirement already satisfied: cloudpickle in /usr/local/lib/python3.10/dist-packages (from pycaret) (2.2.1)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">81.9/81.9 kB</span> <span class=" -Color -Color-Red">6.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: cloudpickle in /usr/local/lib/python3.10/dist-packages (from pycaret) (2.2.1)
 Collecting deprecation&gt;=2.1.0 (from pycaret)
   Downloading deprecation-2.1.0-py2.py3-none-any.whl (11 kB)
-Requirement already satisfied: xxhash in /usr/local/lib/python3.10/dist-packages (from pycaret) (3.4.1)
-Requirement already satisfied: matplotlib&gt;=3.3.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (3.7.1)
-Collecting scikit-plot&gt;=0.3.7 (from pycaret)
-  Downloading scikit_plot-0.3.7-py3-none-any.whl (33 kB)
-Requirement already satisfied: yellowbrick&gt;=1.4 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.5)
-Requirement already satisfied: plotly&gt;=5.0.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (5.15.0)
+Requirement already satisfied: imbalanced-learn&gt;=0.8.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (0.10.1)
+Requirement already satisfied: importlib-metadata&gt;=4.12.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (6.8.0)
+Requirement already satisfied: ipython&gt;=5.5.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (7.34.0)
+Requirement already satisfied: ipywidgets&gt;=7.6.5 in /usr/local/lib/python3.10/dist-packages (from pycaret) (7.7.1)
+Requirement already satisfied: jinja2&gt;=1.2 in /usr/local/lib/python3.10/dist-packages (from pycaret) (3.1.2)
+Requirement already satisfied: joblib&gt;=1.2.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.3.2)
 Collecting kaleido&gt;=0.2.1 (from pycaret)
   Downloading kaleido-0.2.1-py2.py3-none-manylinux1_x86_64.whl (79.9 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">10.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hCollecting schemdraw==0.15 (from pycaret)
-  Downloading schemdraw-0.15-py3-none-any.whl (106 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">106.8/106.8 kB</span> <span class=" -Color -Color-Red">13.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hCollecting plotly-resampler&gt;=0.8.3.1 (from pycaret)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">79.9/79.9 MB</span> <span class=" -Color -Color-Red">8.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: lightgbm&gt;=3.0.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (4.1.0)
+Requirement already satisfied: markupsafe&gt;=2.0.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (2.1.3)
+Collecting matplotlib&lt;=3.6,&gt;=3.3.0 (from pycaret)
+  Downloading matplotlib-3.6.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (11.8 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">11.8/11.8 MB</span> <span class=" -Color -Color-Red">56.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: nbformat&gt;=4.2.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (5.9.2)
+Requirement already satisfied: numba&gt;=0.55.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (0.58.1)
+Requirement already satisfied: numpy&lt;1.27,&gt;=1.21 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.23.5)
+Requirement already satisfied: pandas&lt;2.0.0,&gt;=1.3.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.5.3)
+Collecting plotly-resampler&gt;=0.8.3.1 (from pycaret)
   Downloading plotly_resampler-0.9.1-py3-none-any.whl (73 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">73.4/73.4 kB</span> <span class=" -Color -Color-Red">9.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hRequirement already satisfied: statsmodels&gt;=0.12.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (0.14.0)
-Collecting sktime!=0.17.1,!=0.17.2,!=0.18.0,&lt;0.22.0,&gt;=0.16.1 (from pycaret)
-  Downloading sktime-0.21.1-py3-none-any.whl (17.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.1/17.1 MB</span> <span class=" -Color -Color-Red">110.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hCollecting tbats&gt;=1.1.3 (from pycaret)
-  Downloading tbats-1.1.3-py3-none-any.whl (44 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">44.0/44.0 kB</span> <span class=" -Color -Color-Red">5.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hCollecting pmdarima!=1.8.1,&lt;3.0.0,&gt;=1.8.0 (from pycaret)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">73.4/73.4 kB</span> <span class=" -Color -Color-Red">6.8 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: plotly&gt;=5.0.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (5.15.0)
+Collecting pmdarima!=1.8.1,&lt;3.0.0,&gt;=1.8.0 (from pycaret)
   Downloading pmdarima-2.0.4-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_28_x86_64.whl (2.1 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.1/2.1 MB</span> <span class=" -Color -Color-Red">96.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
-?25hCollecting wurlitzer (from pycaret)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.1/2.1 MB</span> <span class=" -Color -Color-Red">56.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: psutil&gt;=5.9.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (5.9.5)
+Collecting pyod&gt;=1.0.8 (from pycaret)
+  Downloading pyod-1.1.1.tar.gz (159 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">159.4/159.4 kB</span> <span class=" -Color -Color-Red">15.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h  Preparing metadata (setup.py) ... ?25l?25hdone
+Requirement already satisfied: requests&gt;=2.27.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (2.31.0)
+Collecting schemdraw==0.15 (from pycaret)
+  Downloading schemdraw-0.15-py3-none-any.whl (106 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">106.8/106.8 kB</span> <span class=" -Color -Color-Red">11.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: scikit-learn&lt;1.3.0,&gt;=1.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.2.2)
+Collecting scikit-plot&gt;=0.3.7 (from pycaret)
+  Downloading scikit_plot-0.3.7-py3-none-any.whl (33 kB)
+Collecting scipy~=1.10.1 (from pycaret)
+  Downloading scipy-1.10.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (34.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">34.4/34.4 MB</span> <span class=" -Color -Color-Red">12.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hCollecting sktime!=0.17.1,!=0.17.2,!=0.18.0,&lt;0.22.0,&gt;=0.16.1 (from pycaret)
+  Downloading sktime-0.21.1-py3-none-any.whl (17.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">17.1/17.1 MB</span> <span class=" -Color -Color-Red">50.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: statsmodels&gt;=0.12.1 in /usr/local/lib/python3.10/dist-packages (from pycaret) (0.14.0)
+Collecting tbats&gt;=1.1.3 (from pycaret)
+  Downloading tbats-1.1.3-py3-none-any.whl (44 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">44.0/44.0 kB</span> <span class=" -Color -Color-Red">4.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hRequirement already satisfied: tqdm&gt;=4.62.0 in /usr/local/lib/python3.10/dist-packages (from pycaret) (4.66.1)
+Requirement already satisfied: xxhash in /usr/local/lib/python3.10/dist-packages (from pycaret) (3.4.1)
+Requirement already satisfied: yellowbrick&gt;=1.4 in /usr/local/lib/python3.10/dist-packages (from pycaret) (1.5)
+Collecting wurlitzer (from pycaret)
   Downloading wurlitzer-3.0.3-py3-none-any.whl (7.3 kB)
 Requirement already satisfied: patsy&gt;=0.5.1 in /usr/local/lib/python3.10/dist-packages (from category-encoders&gt;=2.4.0-&gt;pycaret) (0.5.3)
 Requirement already satisfied: packaging in /usr/local/lib/python3.10/dist-packages (from deprecation&gt;=2.1.0-&gt;pycaret) (23.2)
@@ -2236,7 +2342,7 @@ Requirement already satisfied: zipp&gt;=0.5 in /usr/local/lib/python3.10/dist-pa
 Requirement already satisfied: setuptools&gt;=18.5 in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (67.7.2)
 Collecting jedi&gt;=0.16 (from ipython&gt;=5.5.0-&gt;pycaret)
   Downloading jedi-0.19.1-py2.py3-none-any.whl (1.6 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.6/1.6 MB</span> <span class=" -Color -Color-Red">93.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">1.6/1.6 MB</span> <span class=" -Color -Color-Red">68.7 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hRequirement already satisfied: decorator in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (4.4.2)
 Requirement already satisfied: pickleshare in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (0.7.5)
 Requirement already satisfied: traitlets&gt;=4.2 in /usr/local/lib/python3.10/dist-packages (from ipython&gt;=5.5.0-&gt;pycaret) (5.7.1)
@@ -2249,13 +2355,13 @@ Requirement already satisfied: ipykernel&gt;=4.5.1 in /usr/local/lib/python3.10/
 Requirement already satisfied: ipython-genutils~=0.2.0 in /usr/local/lib/python3.10/dist-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (0.2.0)
 Requirement already satisfied: widgetsnbextension~=3.6.0 in /usr/local/lib/python3.10/dist-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (3.6.6)
 Requirement already satisfied: jupyterlab-widgets&gt;=1.0.0 in /usr/local/lib/python3.10/dist-packages (from ipywidgets&gt;=7.6.5-&gt;pycaret) (3.0.9)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib&gt;=3.3.0-&gt;pycaret) (1.2.0)
-Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib&gt;=3.3.0-&gt;pycaret) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib&gt;=3.3.0-&gt;pycaret) (4.44.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib&gt;=3.3.0-&gt;pycaret) (1.4.5)
-Requirement already satisfied: pillow&gt;=6.2.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib&gt;=3.3.0-&gt;pycaret) (9.4.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib&gt;=3.3.0-&gt;pycaret) (3.1.1)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib&gt;=3.3.0-&gt;pycaret) (2.8.2)
+Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (1.2.0)
+Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (0.12.1)
+Requirement already satisfied: fonttools&gt;=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (4.44.0)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (1.4.5)
+Requirement already satisfied: pillow&gt;=6.2.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (9.4.0)
+Requirement already satisfied: pyparsing&gt;=2.2.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (3.1.1)
+Requirement already satisfied: python-dateutil&gt;=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib&lt;=3.6,&gt;=3.3.0-&gt;pycaret) (2.8.2)
 Requirement already satisfied: fastjsonschema in /usr/local/lib/python3.10/dist-packages (from nbformat&gt;=4.2.0-&gt;pycaret) (2.18.1)
 Requirement already satisfied: jsonschema&gt;=2.6 in /usr/local/lib/python3.10/dist-packages (from nbformat&gt;=4.2.0-&gt;pycaret) (4.19.2)
 Requirement already satisfied: jupyter-core in /usr/local/lib/python3.10/dist-packages (from nbformat&gt;=4.2.0-&gt;pycaret) (5.5.0)
@@ -2264,16 +2370,16 @@ Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.10/dist
 Requirement already satisfied: tenacity&gt;=6.2.0 in /usr/local/lib/python3.10/dist-packages (from plotly&gt;=5.0.0-&gt;pycaret) (8.2.3)
 Collecting dash&lt;3.0.0,&gt;=2.11.0 (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
   Downloading dash-2.14.1-py3-none-any.whl (10.4 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">10.4/10.4 MB</span> <span class=" -Color -Color-Red">113.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">10.4/10.4 MB</span> <span class=" -Color -Color-Red">84.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hCollecting orjson&lt;4.0.0,&gt;=3.8.0 (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
   Downloading orjson-3.9.10-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (138 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">138.7/138.7 kB</span> <span class=" -Color -Color-Red">17.0 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">138.7/138.7 kB</span> <span class=" -Color -Color-Red">15.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hCollecting trace-updater&gt;=0.0.8 (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
   Downloading trace_updater-0.0.9.1-py3-none-any.whl (185 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">185.2/185.2 kB</span> <span class=" -Color -Color-Red">23.1 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">185.2/185.2 kB</span> <span class=" -Color -Color-Red">17.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hCollecting tsdownsample==0.1.2 (from plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
   Downloading tsdownsample-0.1.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.3 MB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.3/2.3 MB</span> <span class=" -Color -Color-Red">114.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">2.3/2.3 MB</span> <span class=" -Color -Color-Red">79.3 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hRequirement already satisfied: Cython!=0.29.18,!=0.29.31,&gt;=0.29 in /usr/local/lib/python3.10/dist-packages (from pmdarima!=1.8.1,&lt;3.0.0,&gt;=1.8.0-&gt;pycaret) (3.0.5)
 Requirement already satisfied: urllib3 in /usr/local/lib/python3.10/dist-packages (from pmdarima!=1.8.1,&lt;3.0.0,&gt;=1.8.0-&gt;pycaret) (2.0.7)
 Requirement already satisfied: six in /usr/local/lib/python3.10/dist-packages (from pyod&gt;=1.0.8-&gt;pycaret) (1.16.0)
@@ -2284,7 +2390,7 @@ Collecting deprecated&gt;=1.2.13 (from sktime!=0.17.1,!=0.17.2,!=0.18.0,&lt;0.22
   Downloading Deprecated-1.2.14-py2.py3-none-any.whl (9.6 kB)
 Collecting scikit-base&lt;0.6.0 (from sktime!=0.17.1,!=0.17.2,!=0.18.0,&lt;0.22.0,&gt;=0.16.1-&gt;pycaret)
   Downloading scikit_base-0.5.2-py3-none-any.whl (118 kB)
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">119.0/119.0 kB</span> <span class=" -Color -Color-Red">16.9 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">119.0/119.0 kB</span> <span class=" -Color -Color-Red">12.2 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
 ?25hRequirement already satisfied: Flask&lt;3.1,&gt;=1.0.4 in /usr/local/lib/python3.10/dist-packages (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (2.2.5)
 Requirement already satisfied: Werkzeug&lt;3.1 in /usr/local/lib/python3.10/dist-packages (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret) (3.0.1)
 Collecting dash-html-components==2.0.0 (from dash&lt;3.0.0,&gt;=2.11.0-&gt;plotly-resampler&gt;=0.8.3.1-&gt;pycaret)
@@ -2343,26 +2449,23 @@ Requirement already satisfied: exceptiongroup in /usr/local/lib/python3.10/dist-
 Requirement already satisfied: pycparser in /usr/local/lib/python3.10/dist-packages (from cffi&gt;=1.0.1-&gt;argon2-cffi-bindings-&gt;argon2-cffi-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension~=3.6.0-&gt;ipywidgets&gt;=7.6.5-&gt;pycaret) (2.21)
 Building wheels for collected packages: pyod
   Building wheel for pyod (setup.py) ... ?25l?25hdone
-  Created wheel for pyod: filename=pyod-1.1.1-py3-none-any.whl size=190074 sha256=7efa7d5c1d539cfba53082fb2f2bc9af4eaf6cf372f7486c3013ec269dfdaf48
+  Created wheel for pyod: filename=pyod-1.1.1-py3-none-any.whl size=190074 sha256=026419f1a3b306dbcbd9ccb7fb000b0b325f80e3a86705eddbc3da3a881f4415
   Stored in directory: /root/.cache/pip/wheels/a3/42/d7/48a53ffc1466bd63932f28583c64ebf442114db14a0bfa8c95
 Successfully built pyod
-Installing collected packages: trace-updater, kaleido, dash-table, dash-html-components, dash-core-components, wurlitzer, tsdownsample, scipy, scikit-base, schemdraw, retrying, orjson, jedi, deprecation, deprecated, ansi2html, sktime, scikit-plot, pyod, dash, pmdarima, plotly-resampler, category-encoders, tbats, pycaret
+Installing collected packages: trace-updater, kaleido, dash-table, dash-html-components, dash-core-components, wurlitzer, tsdownsample, scipy, scikit-base, schemdraw, retrying, orjson, jedi, deprecation, deprecated, ansi2html, matplotlib, sktime, scikit-plot, pyod, dash, pmdarima, plotly-resampler, category-encoders, tbats, pycaret
   Attempting uninstall: scipy
     Found existing installation: scipy 1.11.3
     Uninstalling scipy-1.11.3:
       Successfully uninstalled scipy-1.11.3
+  Attempting uninstall: matplotlib
+    Found existing installation: matplotlib 3.7.1
+    Uninstalling matplotlib-3.7.1:
+      Successfully uninstalled matplotlib-3.7.1
 <span class=" -Color -Color-Red">ERROR: pip&#39;s dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.</span>
 <span class=" -Color -Color-Red">lida 0.0.10 requires fastapi, which is not installed.</span>
 <span class=" -Color -Color-Red">lida 0.0.10 requires python-multipart, which is not installed.</span>
 <span class=" -Color -Color-Red">lida 0.0.10 requires uvicorn, which is not installed.</span>
-Successfully installed ansi2html-1.8.0 category-encoders-2.6.3 dash-2.14.1 dash-core-components-2.0.0 dash-html-components-2.0.0 dash-table-5.0.0 deprecated-1.2.14 deprecation-2.1.0 jedi-0.19.1 kaleido-0.2.1 orjson-3.9.10 plotly-resampler-0.9.1 pmdarima-2.0.4 pycaret-3.1.0 pyod-1.1.1 retrying-1.3.4 schemdraw-0.15 scikit-base-0.5.2 scikit-plot-0.3.7 scipy-1.10.1 sktime-0.21.1 tbats-1.1.3 trace-updater-0.0.9.1 tsdownsample-0.1.2 wurlitzer-3.0.3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pycaret</span>
+Successfully installed ansi2html-1.8.0 category-encoders-2.6.3 dash-2.14.1 dash-core-components-2.0.0 dash-html-components-2.0.0 dash-table-5.0.0 deprecated-1.2.14 deprecation-2.1.0 jedi-0.19.1 kaleido-0.2.1 matplotlib-3.6.0 orjson-3.9.10 plotly-resampler-0.9.1 pmdarima-2.0.4 pycaret-3.2.0 pyod-1.1.1 retrying-1.3.4 schemdraw-0.15 scikit-base-0.5.2 scikit-plot-0.3.7 scipy-1.10.1 sktime-0.21.1 tbats-1.1.3 trace-updater-0.0.9.1 tsdownsample-0.1.2 wurlitzer-3.0.3
 </pre></div>
 </div>
 </div>
@@ -2429,6 +2532,7 @@ Successfully installed ansi2html-1.8.0 category-encoders-2.6.3 dash-2.14.1 dash-
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class"><strong>Class</strong></a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlah-data-1729"><strong>Jumlah Data</strong> = <strong>1729</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression"><strong>Logistic Regression</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest"><strong>Random Forest</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-curve"><strong>Learning Curve</strong></a></li>
