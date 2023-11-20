@@ -13,7 +13,7 @@ def load_data(dataset):
   return df
 
 def load_predict_model(model_file):
-    loaded_model = joblib.load(open(os.path.join(model_file), "rb"))
+    loaded_model = joblib.load(model_file)
     return loaded_model
 
 buying_label = {'vhigh': 0, 'low': 1, 'med': 2, 'high': 3}
