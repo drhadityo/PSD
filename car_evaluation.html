@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="&lt;no title&gt;" href="UTS.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,12 +165,15 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    <no title>
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Penjelasan Dataset</strong></a></li>
+
+
+
 
 
 
@@ -379,6 +382,9 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlah-data-1729"><strong>Jumlah Data</strong> = <strong>1729</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matirx"><strong>Confusion Matirx</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-report"><strong>Classification Report</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#akurasi"><strong>Akurasi</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression"><strong>Logistic Regression</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest"><strong>Random Forest</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-curve"><strong>Learning Curve</strong></a></li>
@@ -992,6 +998,9 @@ Name: class, dtype: int64
 <p>Label Encoder adalah salah satu teknik transformasi data yang digunakan dalam analisis data dan pembelajaran mesin. Teknik ini digunakan untuk mengubah variabel kategori atau label dalam bentuk teks menjadi angka, sehingga komputer dapat lebih mudah memahami dan memprosesnya. Ini adalah langkah umum dalam pra-pemrosesan data sebelum digunakan dalam model pembelajaran mesin.</p>
 <p>Label Encoding: <span class="math notranslate nohighlight">\(x_i = \text{Angka ke-}i\)</span></p>
 <p>Di sini, <span class="math notranslate nohighlight">\(x_i\)</span> adalah label atau nilai kategori ke-<span class="math notranslate nohighlight">\(i\)</span>, dan hasil Label Encoding adalah angka ke-<span class="math notranslate nohighlight">\(i\)</span>. Label Encoding mengasosiasikan setiap nilai kategori dengan nomor yang unik sesuai urutan kemunculan dalam data.</p>
+<p>Label encoding pada data car evaluation dilakukan untuk mengubah nilai-nilai kategori atau atribut non-numerik menjadi nilai numerik. Ini dilakukan karena sebagian besar algoritma machine learning memerlukan input dalam bentuk numerik. Oleh karena itu, label encoding membantu mengkonversi kategori atau label pada data evaluasi mobil ke dalam format numerik agar dapat digunakan oleh model machine learning.</p>
+<p>Contoh penggunaan label encoding pada data car evaluation adalah pada atribut kelas, seperti “unacc” (tidak dapat diterima), “acc” (dapat diterima), “good” (baik), dan “vgood” (sangat baik). Label encoding akan menggantikan setiap nilai kategori ini dengan nilai numerik tertentu, misalnya, 0 untuk “unacc”, 1 untuk “acc”, 2 untuk “good”, dan 3 untuk “vgood”. Ini memungkinkan model machine learning untuk bekerja dengan lebih baik karena dapat memproses dan memahami hubungan matematis antara nilai-nilai ini.</p>
+<p>Proses label encoding sangat penting ketika kita menggunakan algoritma machine learning seperti decision trees, support vector machines, atau neural networks, yang membutuhkan data input dalam bentuk numerik. Dengan melakukan label encoding, kita dapat mengoptimalkan kinerja model dan memungkinkan model untuk mengenali pola atau hubungan dalam data car evaluation tersebut.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#mengimpor modul LabelEncoder dari pustaka Scikit-learn (sklearn), yang digunakan untuk mengonversi label kategori menjadi nilai numerik</span>
@@ -1658,6 +1667,46 @@ Name: class, dtype: int64
 </div>
 </div>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="confusion-matirx">
+<h1><strong>Confusion Matirx</strong><a class="headerlink" href="#confusion-matirx" title="Permalink to this heading">#</a></h1>
+<p>Confusion matrix adalah tabel yang digunakan untuk mengevaluasi kinerja model klasifikasi dengan membandingkan hasil prediksi model dengan nilai sebenarnya. Terdapat empat bagian utama dalam confusion matrix:</p>
+<ul class="simple">
+<li><p>True Positive (TP): Jumlah sampel positif yang benar-benar diprediksi dengan benar.</p></li>
+<li><p>True Negative (TN): Jumlah sampel negatif yang benar-benar diprediksi dengan benar.</p></li>
+<li><p>False Positive (FP): Jumlah sampel negatif yang salah diprediksi sebagai positif (kesalahan Type I).</p></li>
+<li><p>False Negative (FN): Jumlah sampel positif yang salah diprediksi sebagai negatif (kesalahan Type II).</p></li>
+</ul>
+<p>Rumus Confusion Matrix :</p>
+<p>\begin{bmatrix}
+TN &amp; FP \
+FN &amp; TP \
+\end{bmatrix}</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="classification-report">
+<h1><strong>Classification Report</strong><a class="headerlink" href="#classification-report" title="Permalink to this heading">#</a></h1>
+<p>Classification report memberikan ringkasan yang lebih komprehensif tentang kinerja model dengan menyertakan beberapa metrik seperti precision, recall, f1-score, dan support untuk setiap kelas. Metrik-metrik ini dihitung berdasarkan nilai-nilai dari confusion matrix.</p>
+<p>Rumus :</p>
+<p>\begin{align*}
+Precision &amp; = \frac{TP}{TP + FP} \
+Recall &amp; = \frac{TP}{TP + FN} \
+F1\text{-}Score &amp; = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} \
+Accuracy &amp; = \frac{TP + TN}{TP + TN + FP + FN} \
+\end{align*}</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(TP\)</span> adalah True Positive</p></li>
+<li><p><span class="math notranslate nohighlight">\(TN\)</span> adalah True Negative</p></li>
+<li><p><span class="math notranslate nohighlight">\(FP\)</span> adalah False Positive</p></li>
+<li><p><span class="math notranslate nohighlight">\(FN\)</span> adalah False Negative.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="akurasi">
+<h1><strong>Akurasi</strong><a class="headerlink" href="#akurasi" title="Permalink to this heading">#</a></h1>
+<p>Akurasi adalah ukuran keseluruhan sejauh mana model klasifikasi dapat memprediksi dengan benar. Tujuannya adalah menunjukkan persentase total prediksi yang benar dari semua prediksi yang dilakukan oleh model.</p>
+<p>Rumus:
+\begin{align*}
+Accuracy &amp; = \frac{TP + TN}{TP + TN + FP + FN} \
+\end{align*}</p>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="logistic-regression">
 <h1><strong>Logistic Regression</strong><a class="headerlink" href="#logistic-regression" title="Permalink to this heading">#</a></h1>
 <p>Regresi Logistik (Logistic Regression):
@@ -2307,7 +2356,7 @@ Testing Accuracy : 0.9653179190751445
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
     </a>
     <a class="right-next"
@@ -2341,6 +2390,9 @@ Testing Accuracy : 0.9653179190751445
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#jumlah-data-1729"><strong>Jumlah Data</strong> = <strong>1729</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#confusion-matirx"><strong>Confusion Matirx</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-report"><strong>Classification Report</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#akurasi"><strong>Akurasi</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#logistic-regression"><strong>Logistic Regression</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest"><strong>Random Forest</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-curve"><strong>Learning Curve</strong></a></li>
