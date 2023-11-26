@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 matplotlib.use('Agg')
 
-@st.cache_data
+@st.cache
 def load_data(dataset):
   df = pd.read_csv(dataset)
   return df
