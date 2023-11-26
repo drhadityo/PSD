@@ -14,7 +14,8 @@ def load_data(dataset):
   return df
 
 def load_predict_model(model_file):
-    loaded_model = joblib.load(model_file)
+    with open(model_file, 'rb') as file:
+        loaded_model = pickle.load(file)
     return loaded_model
 
 buying_label = {'vhigh': 0, 'low': 1, 'med': 2, 'high': 3}
