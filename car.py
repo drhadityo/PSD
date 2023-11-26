@@ -118,6 +118,3 @@ def main():
 
             final_result = get_key(prediction, class_label)
             st.success(final_result)
-
-if __name__ == '__main__':
-    main()
