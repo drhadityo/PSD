@@ -42,17 +42,21 @@ def calculate_statistics(audio_path):
 
 # Memuat model dan skalar yang telah dilatih
 
-file_path = 'zscore.pkl'
+file_path1 = 'zscore.pkl'
 
-if not os.path.exists(file_path):
-    print(f"Error: File '{file_path}' not found.")
+if not os.path.exists(file_path1):
+    print(f"Error: File '{file_path1}' not found.")
 else:
-    with open(file_path, 'rb') as file:
+    with open(file_path1, 'rb') as file:
         normalisasi_zscore = pickle.load(file)
 
+file_path2 = 'minmax1.pkl'
 
-with open('minmax1.pkl', 'rb') as file:
-    minmaxscaler = pickle.load(file)
+if not os.path.exists(file_path2):
+    print(f"Error: File '{file_path2}' not found.")
+else:
+    with open(file_path2, 'rb') as file:
+        minmaxscaler = pickle.load(file)
 
 # Memuat model KNN untuk kategori emosi dengan normalisasi ZScore
 with open('model_zscore_terbaik.pkl', 'rb') as file:
