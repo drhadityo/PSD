@@ -58,19 +58,38 @@ else:
     with open(file_path2, 'rb') as file:
         minmaxscaler = pickle.load(file)
 
-# Memuat model KNN untuk kategori emosi dengan normalisasi ZScore
-with open('model_zscore_terbaik.pkl', 'rb') as file:
-    knn_zscore = pickle.load(file)
+file_path3 = 'model_zscore_terbaik.pkl'
 
-# Memuat model KNN untuk kategori emosi dengan normalisasi MinMax
-with open('model_knn_terbaik_minmax.pkl', 'rb') as file:
-    knn_minmax = pickle.load(file)
+if not os.path.exists(file_path3):
+    print(f"Error: File '{file_path3}' not found.")
+else:
+    with open(file_path3, 'rb') as file:
+        knn_zscore = pickle.load(file)
 
-with open('pca_zscore_fiks.pkl', 'rb') as file :
-    pca_zscore = pickle.load(file)
+file_path4 = 'model_knn_terbaik_minmax.pkl'
 
-with open('knn_pca_zscore.pkl', 'rb') as file :
-    knn_pca_zscore = pickle.load(file)
+if not os.path.exists(file_path4):
+    print(f"Error: File '{file_path4}' not found.")
+else:
+    with open(file_path4, 'rb') as file:
+        knn_minmax = pickle.load(file)
+        
+file_path5 = 'pca_zscore_fiks.pkl'
+
+if not os.path.exists(file_path5):
+    print(f"Error: File '{file_path5}' not found.")
+else:
+    with open(file_path5, 'rb') as file:
+        knn_minmax = pickle.load(file)
+
+file_path6 = 'knn_pca_zscore.pkl'
+
+if not os.path.exists(file_path6):
+    print(f"Error: File '{file_path6}' not found.")
+else:
+    with open(file_path6, 'rb') as file:
+        knn_minmax = pickle.load(file)
+
 
 
 
