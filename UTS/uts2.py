@@ -41,8 +41,15 @@ def calculate_statistics(audio_path):
     return [mean, std_dev, max_value, min_value, median, skewness, kurt, q1, q3, mode_value[0], iqr, zcr_mean, zcr_median, zcr_std_dev, zcr_kurtosis, zcr_skew, rms, rms_median, rms_std_dev, rms_kurtosis, rms_skew]
 
 # Memuat model dan skalar yang telah dilatih
-with open('zscore.pkl', 'rb') as file:
-    normalisasi_zscore = pickle.load(file)
+
+file_path = 'zscore.pkl'
+
+if not os.path.exists(file_path):
+    print(f"Error: File '{file_path}' not found.")
+else:
+    with open(file_path, 'rb') as file:
+        normalisasi_zscore = pickle.load(file)
+
 
 with open('minmax1.pkl', 'rb') as file:
     minmaxscaler = pickle.load(file)
