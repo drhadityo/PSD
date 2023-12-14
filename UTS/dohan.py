@@ -43,10 +43,13 @@ def calculate_statistics(audio_path):
 # Memuat model dan skalar yang telah dilatih
 
 # Dapatkan jalur absolut dari file
-file_path = os.path.abspath('ini_zscore.pkl')
+file_path = 'ini_zscore.pkl'
 
-with open(file_path, 'rb') as file:
-    # Kode Anda di sini
+if os.path.exists(file_path):
+    with open(file_path, 'rb') as file:
+        # Kode Anda di sini
+else:
+    print(f"File {file_path} tidak ditemukan.")
 
 
 # Memuat model KNN untuk kategori emosi dengan normalisasi ZScore
