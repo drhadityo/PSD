@@ -56,8 +56,8 @@ with open('file_knn_pca_zscore.pkl', 'rb') as modelpca:
 
 # Aplikasi Streamlit
 st.title("Deteksi Pengenalan Emosi")
-st.markdown("**Nama  : Dohan Rizqi Hadityo.**")
-st.markdown("**NIM   : 210411100195.**")
+st.markdown("**Nama  : Firlli Yuzia Rahmanu.**")
+st.markdown("**NIM   : 210411100163.**")
 st.write("Unggah file audio.")
 
 uploaded_file = st.file_uploader("Pilih file audio...", type=["wav","mp3"])
