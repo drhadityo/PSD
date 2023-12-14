@@ -41,8 +41,13 @@ def calculate_statistics(audio_path):
     return [mean, std_dev, max_value, min_value, median, skewness, kurt, q1, q3, mode_value[0], iqr, zcr_mean, zcr_median, zcr_std_dev, zcr_kurtosis, zcr_skew, rms, rms_median, rms_std_dev, rms_kurtosis, rms_skew]
 
 # Memuat model dan skalar yang telah dilatih
-with open('ini_zscore.pkl', 'rb') as file:
-    normalisasi_zscore = pickle.load(file)
+
+# Dapatkan jalur absolut dari file
+file_path = os.path.abspath('ini_zscore.pkl')
+
+with open(file_path, 'rb') as file:
+    # Kode Anda di sini
+
 
 # Memuat model KNN untuk kategori emosi dengan normalisasi ZScore
 with open('model_zscore_terbaik.pkl', 'rb') as file:
